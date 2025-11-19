@@ -1,0 +1,26 @@
+[Unit]
+Description=silo11writerdeck TUI on tty1 (system)
+ConditionPathExists=${WD_HOME}/silo11writerdeck
+Conflicts=getty@tty1.service
+After=systemd-user-sessions.service
+
+[Service]
+Type=simple
+User=${WD_USER}
+WorkingDirectory=${WD_HOME}/silo11writerdeck
+Environment=LANG=C.UTF-8
+Environment=PYTHONUNBUFFERED=1
+# Bind the service to the physical tty so the UI is visible on the console
+StandardInput=tty
+StandardOutput=tty
+StandardError=journal
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+ExecStart=${WD_HOME}/.local/bin/silo11writerdeck
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

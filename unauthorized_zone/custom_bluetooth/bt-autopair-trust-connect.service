@@ -1,0 +1,16 @@
+# /etc/systemd/system/bt-autopair-trust-connect.service
+[Unit]
+Description=Bluetooth Auto-Pair, Trust & Connect Agent (silo11writerdeck)
+Wants=bluetooth.service dbus.service
+After=bluetooth.service dbus.service network.target
+
+[Service]
+Type=exec
+# Run the agent in the foreground so systemd supervises it directly
+ExecStart=/usr/bin/python3 /usr/local/bin/bt_autopair_trust_connect_agent.py
+Restart=on-failure
+RestartSec=2
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

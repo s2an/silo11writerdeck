@@ -1,0 +1,18 @@
+[Unit]
+Description=silo11writerdeck TUI (user)
+ConditionPathExists=%h/silo11writerdeck
+
+[Service]
+Type=simple
+WorkingDirectory=%h/silo11writerdeck
+Environment=WD_STATE_DIR=%h/.local/state/silo11writerdeck
+Environment=WD_CFG_DIR=%h/.config/silo11writerdeck
+Environment=LANG=C.UTF-8
+Environment=WD_EXPORT_BIN=%h/.local/bin/export_http_server.py
+Environment=PYTHONUNBUFFERED=1
+ExecStart=%h/.local/bin/silo11writerdeck
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
