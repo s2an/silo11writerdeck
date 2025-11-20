@@ -1,6 +1,6 @@
 # silo11writerdeck
 
-![Python 3](https://img.shields.io/badge/Python-3.11-2d2d2d?style=for-the-badge&logo=python&logoColor=ffcc33)
+![Python 3](https://img.shields.io/badge/Python%203.11-2d2d2d?style=for-the-badge&logo=python&logoColor=ffcc33)
 ![Bash](https://img.shields.io/badge/Bash-2d2d2d?style=for-the-badge&logo=gnu-bash&logoColor=bfbfbf)
 ![systemd](https://img.shields.io/badge/systemd-2d2d2d?style=for-the-badge&logo=systemd&logoColor=c0c0c0)
 ![curses TUI](https://img.shields.io/badge/curses%20TUI-2d2d2d?style=for-the-badge&logo=gnome-terminal&logoColor=bfbfbf)
@@ -23,8 +23,6 @@ silo11writerdeck turns Raspberry Pi, macOS, and apt/systemd-based Linux systems 
 >
 > 🧭 *Status: ACTIVE BUILD.*
 > Unauthorized modules (Custom HTTP Exporter, Auto Bluetooth Agent, Display Hijacker) remain sealed behind the **Unauthorized Zone** during their construction.
-
----
 
 ## Table of Contents
 
@@ -55,8 +53,6 @@ silo11writerdeck turns Raspberry Pi, macOS, and apt/systemd-based Linux systems 
 * [Contributing Agents](#contributing-agents)
 * [License](#license)
 
----
-
 ## Field Manual
 
 ### Core Systems
@@ -64,6 +60,8 @@ silo11writerdeck turns Raspberry Pi, macOS, and apt/systemd-based Linux systems 
 * **Silo-style curses HUD launcher** — patina flicker, riveted frames, hazard-striped headers, and beacon footers.
 * **Keyboard-driven navigation:** arrows ↑↓, **Enter** to confirm, **ESC / Back** to retreat. Programs are primarily requisitioned to work without a mouse.
 * Built with **Python 3.11** and **Bash** — so (almost) any salvaged devices is workable.
+
+![HUD Overview](screenshots/main.png)
 
 ---
 
@@ -80,6 +78,8 @@ Run any from the HUD, or let **Last Used** remember your favorite loadout.
 * **Vim** — precision editor for veterans. Requires discipline, rewards mastery. *For those who fear no modal interface.*
 * **WordGrinder** — long-form fortress for prose. Works entirely offline, immune to distractions, EMPs, and notifications. (Where all novices start.)
 
+![Writing Suite for Linux](screenshots/writing_suite.png)
+
 ---
 
 ### File Operations
@@ -94,6 +94,8 @@ Run any from the HUD, or let **Last Used** remember your favorite loadout.
   URL is printed on the HUD when active. Accessible from any browser in the local network.
   *(Broadcast stays LAN-bound — safe within the perimeter.)*
 
+![Export Server](screenshots/export_server.png)
+
 ---
 
 ### Network Tools
@@ -107,17 +109,26 @@ Run any from the HUD, or let **Last Used** remember your favorite loadout.
 #### macOS
 * **Not Supported:** Use the built-in System Settings.
 
+![Network Tools](screenshots/network_tools.png)
+
 ---
 
 ### Visual Control & Themes
 
 * **Rotation Module (Linux-only):** 0° / 90° / 180° / 270° — for when your scavenged screen is sideways.
+
+![Screen Rotation](screenshots/screen_rotation.png)
+
 * **Theme Selector:**
   - `Day ☀` – clean & bright
   - `Night ☾` – green/blue phosphor HUD
   - `Toxic ☣` – hazard glow under emergency lighting
-  
+
 *Feature Under Construction:* `Repaired` - a mode to remove the static from the screen.
+
+![Day](screenshots/theme_day.png)
+![Night](screenshots/theme_night.png)
+![Toxic](screenshots/theme_toxic.png)
 
 ---
 
@@ -129,6 +140,9 @@ Run any from the HUD, or let **Last Used** remember your favorite loadout.
 
 #### macOS
 * **Not Supported:** Use the built-in System Settings.
+
+![Power Controls](screenshots/power_controls.png)
+
 ---
 
 ### Unauthorized Zone
@@ -136,12 +150,13 @@ Run any from the HUD, or let **Last Used** remember your favorite loadout.
 * **HTTP Exporter 2.0** — modular LAN courier server.
 * **Auto Bluetooth Agent** — auto-pair/trust/connect at boot.
 * **Wi-Fi Recovery Daemon** — reconnect logic and silent scans.
-* **Display Hijacker** — mirror the HUD to an old tablet display (plug a Pi into any screen to take it over).
-* **Vault Linker** — experimental content archiver (auto-save).
+* **Exit to Consoler** — buried for those that might panic if they accidently ended up outside the program. (Ctrl + C will also exit to console)
+
+![Unauthorized Zone](screenshots/unauthorized_zone.png)
 
 ---
 
-### 🧭 Pre-Installation
+### Pre-Installation
 
 | OS                                    | Supported  | Notes                                 |
 | ------------------------------------- | ---------- | ------------------------------------- |
@@ -151,30 +166,28 @@ Run any from the HUD, or let **Last Used** remember your favorite loadout.
 | **macOS (Intel / Apple Silicon)**     | ✅          | No Linux-specific system utilities    |
 | **Fedora / Arch / Alpine / Void**     | ❌          | Not supported (non-apt or no systemd) |
 
-#### 🫐 Raspberry Pi
+
+#### Raspberry Pi
 
 For the smoothest setup, use **Raspberry Pi Imager:** https://www.raspberrypi.com/software/
 
-When prompted, **enter your Wi-Fi and SSH credentials** — this makes it easy to connect to your pi from another computer to install the program. (Disregard if your Pi is already set up with peripherals!)
-
 Select:
-
 * **Device:** your Pi model (e.g., *Pi 5*, *Zero 2 W*, etc.)
 * **OS:** `Raspberry Pi OS Lite` → *(terminal-only experience, ideal for silo11writerdeck)*
 * **Storage:** your microsd card ready for flashing
 
----
+When prompted, **enter your Wi-Fi and SSH credentials** — this makes it easy to connect to your pi from another computer to install the program. (Disregard if your Pi is already set up with peripherals!)
 
-#### 🪶 Debian
+
+#### Debian
 
 Perfect for reclaiming an old laptop or breathing life into spare hardware.
 Download and install **Debian** (https://www.debian.org/distrib/netinst).
 
 The installer is long but simple — just **accept the defaults** and **skip the GUI** for a clean, terminal-only system. (You will need your password during silo11writerdeck installation!)
 
----
 
-#### 🍎 macOS
+#### macOS
 
 Already have a MacBook or desktop lying around?
 
@@ -213,6 +226,7 @@ git clone https://github.com/s2an/silo11writerdeck.git
 cd silo11writerdeck
 bash install-silo11writerdeck.sh
 ```
+
 #### macOS
 
 ```bash
@@ -221,6 +235,8 @@ git clone https://github.com/s2an/silo11writerdeck.git
 cd silo11writerdeck
 bash install-silo11writerdeck.sh
 ```
+
+---
 
 ### Installation Walkthrough
 
@@ -240,7 +256,7 @@ bash install-silo11writerdeck.sh
    cd ~
    git clone https://github.com/.../silo11writerdeck.git
    cd silo11writerdeck
-   bash ./install-silo11writerdeck.sh
+   bash install-silo11writerdeck.sh
    ```
 
 3. **Choose your deployment mode**
@@ -252,7 +268,7 @@ bash install-silo11writerdeck.sh
    * **Linger** — enables persistent user services that survive logout (prompt during user install).
    * **None** — disables autostart; run manually from any terminal with `silo11writerdeck`.
 
-   *(These settings can be changed later through the updater.)*
+   *(Under Construction: These settings can be changed through the updater. As of now the updater needs to be run through the console with the applicable flags: bash update-silo11writerdeck.sh [--system] [--user] [--user-linger] [--none] )*
 
 #### macOS
 
@@ -264,7 +280,7 @@ bash install-silo11writerdeck.sh
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
 
-*Note: During installation, you’ll be prompted to enter **sudo (password)** permission.*
+  *Note: During installation, you’ll be prompted to enter **sudo (password)** permission.*
 
 2. **Clone and deploy**
 
@@ -272,8 +288,9 @@ bash install-silo11writerdeck.sh
    cd ~
    git clone https://github.com/.../silo11writerdeck.git
    cd silo11writerdeck
-   bash ./install-silo11writerdeck.sh
+   bash install-silo11writerdeck.sh
    ```
+
 3. **Add to PATH**
 
 *NOTE: After a successful installation you’ll be prompted to add `silo11writerdeck` to your PATH, or it will become available after opening a new terminal session.*
@@ -293,7 +310,7 @@ bash install-silo11writerdeck.sh
 * **From the terminal:**
 
   ```bash
-  bash ./healthcheck-silo11writerdeck.sh
+  bash healthcheck-silo11writerdeck.sh
   ```
 
 Performs a full diagnostic sweep:
@@ -311,7 +328,7 @@ Performs a full diagnostic sweep:
 * **From the terminal:**
 
   ```bash
-  bash ./update-silo11writerdeck.sh
+  bash update-silo11writerdeck.sh
   ```
 
 Performs a **safe sync** — no data loss, reconciles wrappers and user services.
@@ -325,7 +342,7 @@ If the repo path is missing, the updater prompts for re-installation.
 * **From the terminal:**
 
   ```bash
-  bash ./uninstall-silo11writerdeck.sh
+  bash uninstall-silo11writerdeck.sh
   ```
 
 Removes system/user units, launcher wrappers, and logs while preserving your writing archives.
@@ -359,8 +376,6 @@ silo11writerdeck/
 └─ unauthorized_zone/                # experimental modules (sealed)
 ```
 
----
-
 ## Incident Recovery (Troubleshooting)
 
 | Symptom                               | Remedy                                                                    |
@@ -371,8 +386,6 @@ silo11writerdeck/
 | **Bluetooth fails pairing**           | Fallback to manual `bluetoothctl` pairing until agent is deployed.        |
 | **No internet for update**            | Updater fails gracefully with ⚠️ and suggests reinstall when online.      |
 
----
-
 ## Future Signals (Roadmap)
 
 - **macOS Auto-Start** — a mac mirror installation option to allow silo11writerdeck to launch upon opening a terminal shell and to auto-launch a terminal shell after logging in to your macOS device.
@@ -381,9 +394,6 @@ silo11writerdeck/
 - **Vault Mode** — encrypted archive of writing output for long-term preservation (auto-save).
 - **Theme Expansion** — add a repaired mode to clean the static from the screen.
 - **HTTP Exporter 2.0** — structured endpoints, file sanitization, live HUD status.
-- **Wi-Fi Recovery Daemon** — automatic reconnect on network loss.
-
----
 
 ## Contributing Agents
 
@@ -393,8 +403,6 @@ Contributions welcome — but keep them disciplined:
 * Preserve **SRP (Single Responsibility Principle)**.
 * File all prototype work in `/unauthorized_zone` until stable.
 * Document your commits with **sector logs** and **hazard tags**.
-
----
 
 ## License
 
